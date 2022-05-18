@@ -2,16 +2,17 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**bank_accounts** | **String** |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **bank_accounts** | **String** |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'OpenapiClient'
+require 'openapi_client'
 
-instance = OpenapiClient::DirectDebitAuthorityRelated.new(bank_accounts: 9fda18e7-b1d3-4a83-830d-0cef0f62cd25)
+instance = OpenapiClient::DirectDebitAuthorityRelated.new(
+  bank_accounts: 9fda18e7-b1d3-4a83-830d-0cef0f62cd25
+)
 ```
-
 

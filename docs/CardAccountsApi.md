@@ -1,29 +1,28 @@
 # OpenapiClient::CardAccountsApi
 
-All URIs are relative to *https://virtserver.swaggerhub.com/AssemblyPlatforms/assembly-api/2.0*
+All URIs are relative to *https://test.api.promisepay.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**create_card_account**](CardAccountsApi.md#create_card_account) | **POST** /card_accounts | Create Card Account
-[**redact_card_account**](CardAccountsApi.md#redact_card_account) | **DELETE** /card_accounts/{id} | Redact Card Account
-[**show_card_account**](CardAccountsApi.md#show_card_account) | **GET** /card_accounts/{id} | Show Card Account
-[**show_card_account_user**](CardAccountsApi.md#show_card_account_user) | **GET** /card_accounts/{id}/users | Show Card Account User
-[**verify_card**](CardAccountsApi.md#verify_card) | **PATCH** /card_accounts/{id}/verify | Verify Card
-
+| Method | HTTP request | Description |
+| ------ | ------------ | ----------- |
+| [**create_card_account**](CardAccountsApi.md#create_card_account) | **POST** /card_accounts | Create Card Account |
+| [**redact_card_account**](CardAccountsApi.md#redact_card_account) | **DELETE** /card_accounts/{id} | Redact Card Account |
+| [**show_card_account**](CardAccountsApi.md#show_card_account) | **GET** /card_accounts/{id} | Show Card Account |
+| [**show_card_account_user**](CardAccountsApi.md#show_card_account_user) | **GET** /card_accounts/{id}/users | Show Card Account User |
+| [**verify_card**](CardAccountsApi.md#verify_card) | **PATCH** /card_accounts/{id}/verify | Verify Card |
 
 
 ## create_card_account
 
-> CardAccount create_card_account(card_account_request_body)
+> <CardAccount> create_card_account(card_account_request_body)
 
 Create Card Account
 
 Create a Credit **Card Account** to be used as a funding source. Store the returned `:id` and use it for a `make_payment` **Item Action** call. The `:id` is also referred to as a **token** when involving Credit Cards. 
 
-### Example
+### Examples
 
 ```ruby
-# load the gem
+require 'time'
 require 'openapi_client'
 # setup authorization
 OpenapiClient.configure do |config|
@@ -36,23 +35,40 @@ OpenapiClient.configure do |config|
 end
 
 api_instance = OpenapiClient::CardAccountsApi.new
-card_account_request_body = OpenapiClient::CardAccountRequestBody.new # CardAccountRequestBody | 
+card_account_request_body = OpenapiClient::CardAccountRequestBody.new({full_name: 'John Doe', number: '4444111122223333', expiry_month: 1, expiry_year: 2025, cvv: '123', user_id: '83f54680-9600-4bee-a6d1-84a5d0e10059'}) # CardAccountRequestBody | 
 
 begin
-  #Create Card Account
+  # Create Card Account
   result = api_instance.create_card_account(card_account_request_body)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Exception when calling CardAccountsApi->create_card_account: #{e}"
+  puts "Error when calling CardAccountsApi->create_card_account: #{e}"
+end
+```
+
+#### Using the create_card_account_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<CardAccount>, Integer, Hash)> create_card_account_with_http_info(card_account_request_body)
+
+```ruby
+begin
+  # Create Card Account
+  data, status_code, headers = api_instance.create_card_account_with_http_info(card_account_request_body)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <CardAccount>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CardAccountsApi->create_card_account_with_http_info: #{e}"
 end
 ```
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **card_account_request_body** | [**CardAccountRequestBody**](CardAccountRequestBody.md)|  | 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **card_account_request_body** | [**CardAccountRequestBody**](CardAccountRequestBody.md) |  |  |
 
 ### Return type
 
@@ -70,16 +86,16 @@ Name | Type | Description  | Notes
 
 ## redact_card_account
 
-> CardAccountDeletion redact_card_account(id)
+> <CardAccountDeletion> redact_card_account(id)
 
 Redact Card Account
 
 Redact a Credit **Card Account** using a given `:id`. Redacted Credit **Card Accounts** can no longer be used as a funding source. 
 
-### Example
+### Examples
 
 ```ruby
-# load the gem
+require 'time'
 require 'openapi_client'
 # setup authorization
 OpenapiClient.configure do |config|
@@ -95,20 +111,37 @@ api_instance = OpenapiClient::CardAccountsApi.new
 id = 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee' # String | ID of the card account to be deleted
 
 begin
-  #Redact Card Account
+  # Redact Card Account
   result = api_instance.redact_card_account(id)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Exception when calling CardAccountsApi->redact_card_account: #{e}"
+  puts "Error when calling CardAccountsApi->redact_card_account: #{e}"
+end
+```
+
+#### Using the redact_card_account_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<CardAccountDeletion>, Integer, Hash)> redact_card_account_with_http_info(id)
+
+```ruby
+begin
+  # Redact Card Account
+  data, status_code, headers = api_instance.redact_card_account_with_http_info(id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <CardAccountDeletion>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CardAccountsApi->redact_card_account_with_http_info: #{e}"
 end
 ```
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| ID of the card account to be deleted | [default to &#39;aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee&#39;]
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **id** | **String** | ID of the card account to be deleted | [default to &#39;aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee&#39;] |
 
 ### Return type
 
@@ -126,16 +159,16 @@ Name | Type | Description  | Notes
 
 ## show_card_account
 
-> CardAccount show_card_account(id)
+> <CardAccount> show_card_account(id)
 
 Show Card Account
 
 Show details of a specific Credit **Card Account** using a given `:id`. You can toggle the card account number display to show the first 6 digits in addition to the last 4 digits. Contact Assembly if you want to toggle the card account display. 
 
-### Example
+### Examples
 
 ```ruby
-# load the gem
+require 'time'
 require 'openapi_client'
 # setup authorization
 OpenapiClient.configure do |config|
@@ -151,20 +184,37 @@ api_instance = OpenapiClient::CardAccountsApi.new
 id = 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee' # String | Card account ID
 
 begin
-  #Show Card Account
+  # Show Card Account
   result = api_instance.show_card_account(id)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Exception when calling CardAccountsApi->show_card_account: #{e}"
+  puts "Error when calling CardAccountsApi->show_card_account: #{e}"
+end
+```
+
+#### Using the show_card_account_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<CardAccount>, Integer, Hash)> show_card_account_with_http_info(id)
+
+```ruby
+begin
+  # Show Card Account
+  data, status_code, headers = api_instance.show_card_account_with_http_info(id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <CardAccount>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CardAccountsApi->show_card_account_with_http_info: #{e}"
 end
 ```
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| Card account ID | [default to &#39;aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee&#39;]
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **id** | **String** | Card account ID | [default to &#39;aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee&#39;] |
 
 ### Return type
 
@@ -182,16 +232,16 @@ Name | Type | Description  | Notes
 
 ## show_card_account_user
 
-> SingleUser show_card_account_user(id)
+> <SingleUser> show_card_account_user(id)
 
 Show Card Account User
 
 Show the **User** the Credit **Card Account** is associated with using a given `:id`.
 
-### Example
+### Examples
 
 ```ruby
-# load the gem
+require 'time'
 require 'openapi_client'
 # setup authorization
 OpenapiClient.configure do |config|
@@ -207,20 +257,37 @@ api_instance = OpenapiClient::CardAccountsApi.new
 id = '901d8cd0-6af3-0138-967d-0a58a9feac04' # String | Card account ID
 
 begin
-  #Show Card Account User
+  # Show Card Account User
   result = api_instance.show_card_account_user(id)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Exception when calling CardAccountsApi->show_card_account_user: #{e}"
+  puts "Error when calling CardAccountsApi->show_card_account_user: #{e}"
+end
+```
+
+#### Using the show_card_account_user_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<SingleUser>, Integer, Hash)> show_card_account_user_with_http_info(id)
+
+```ruby
+begin
+  # Show Card Account User
+  data, status_code, headers = api_instance.show_card_account_user_with_http_info(id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <SingleUser>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CardAccountsApi->show_card_account_user_with_http_info: #{e}"
 end
 ```
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| Card account ID | [default to &#39;901d8cd0-6af3-0138-967d-0a58a9feac04&#39;]
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **id** | **String** | Card account ID | [default to &#39;901d8cd0-6af3-0138-967d-0a58a9feac04&#39;] |
 
 ### Return type
 
@@ -238,16 +305,16 @@ Name | Type | Description  | Notes
 
 ## verify_card
 
-> CardAccount verify_card(id, opts)
+> <CardAccount> verify_card(id, opts)
 
 Verify Card
 
 Where pre-authorization is enabled on a platform, verifies a **Card Account** when a **Card Account** is successfully verified, its verification status is `verified`.
 
-### Example
+### Examples
 
 ```ruby
-# load the gem
+require 'time'
 require 'openapi_client'
 # setup authorization
 OpenapiClient.configure do |config|
@@ -266,21 +333,38 @@ opts = {
 }
 
 begin
-  #Verify Card
+  # Verify Card
   result = api_instance.verify_card(id, opts)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Exception when calling CardAccountsApi->verify_card: #{e}"
+  puts "Error when calling CardAccountsApi->verify_card: #{e}"
+end
+```
+
+#### Using the verify_card_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<CardAccount>, Integer, Hash)> verify_card_with_http_info(id, opts)
+
+```ruby
+begin
+  # Verify Card
+  data, status_code, headers = api_instance.verify_card_with_http_info(id, opts)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <CardAccount>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling CardAccountsApi->verify_card_with_http_info: #{e}"
 end
 ```
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| Card account ID | [default to &#39;aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee&#39;]
- **card_account_verify_request_body** | [**CardAccountVerifyRequestBody**](CardAccountVerifyRequestBody.md)|  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **id** | **String** | Card account ID | [default to &#39;aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee&#39;] |
+| **card_account_verify_request_body** | [**CardAccountVerifyRequestBody**](CardAccountVerifyRequestBody.md) |  | [optional] |
 
 ### Return type
 

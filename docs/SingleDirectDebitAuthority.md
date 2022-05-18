@@ -2,16 +2,17 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**direct_debit_authorities** | [**DirectDebitAuthority**](DirectDebitAuthority.md) |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **direct_debit_authorities** | [**DirectDebitAuthority**](DirectDebitAuthority.md) |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'OpenapiClient'
+require 'openapi_client'
 
-instance = OpenapiClient::SingleDirectDebitAuthority.new(direct_debit_authorities: null)
+instance = OpenapiClient::SingleDirectDebitAuthority.new(
+  direct_debit_authorities: null
+)
 ```
-
 

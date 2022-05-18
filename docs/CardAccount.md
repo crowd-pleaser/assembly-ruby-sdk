@@ -2,16 +2,17 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**card_accounts** | [**CardAccountCardAccounts**](CardAccountCardAccounts.md) |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **card_accounts** | [**CardAccountCardAccounts**](CardAccountCardAccounts.md) |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'OpenapiClient'
+require 'openapi_client'
 
-instance = OpenapiClient::CardAccount.new(card_accounts: null)
+instance = OpenapiClient::CardAccount.new(
+  card_accounts: null
+)
 ```
-
 

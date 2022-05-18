@@ -2,22 +2,23 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**biller_code** | **String** |  | [optional] 
-**reference** | **String** |  | [optional] 
-**amount** | **String** |  | [optional] 
-**currency** | **String** |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **biller_code** | **String** |  | [optional] |
+| **reference** | **String** |  | [optional] |
+| **amount** | **String** |  | [optional] |
+| **currency** | **String** |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'OpenapiClient'
+require 'openapi_client'
 
-instance = OpenapiClient::WalletAccountBpayDetailsBpayDetails.new(biller_code: null,
-                                 reference: null,
-                                 amount: null,
-                                 currency: null)
+instance = OpenapiClient::WalletAccountBpayDetailsBpayDetails.new(
+  biller_code: null,
+  reference: null,
+  amount: null,
+  currency: null
+)
 ```
-
 

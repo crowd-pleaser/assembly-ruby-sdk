@@ -2,18 +2,19 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**pay_id** | **String** |  | [optional] 
-**type** | **String** |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **pay_id** | **String** |  | [optional] |
+| **type** | **String** |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'OpenapiClient'
+require 'openapi_client'
 
-instance = OpenapiClient::WalletAccountNppDetailsNppDetailsMarketplacePayIds.new(pay_id: npp@assemblypayments.com,
-                                 type: null)
+instance = OpenapiClient::WalletAccountNppDetailsNppDetailsMarketplacePayIds.new(
+  pay_id: npp@assemblypayments.com,
+  type: null
+)
 ```
-
 

@@ -2,22 +2,23 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**group_name** | **String** |  | [optional] 
-**name** | **String** |  | [optional] 
-**short_name** | **String** |  | [optional] 
-**uuid** | **String** |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **group_name** | **String** |  | [optional] |
+| **name** | **String** |  | [optional] |
+| **short_name** | **String** |  | [optional] |
+| **uuid** | **String** |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'OpenapiClient'
+require 'openapi_client'
 
-instance = OpenapiClient::TransactionMarketplace.new(group_name: null,
-                                 name: null,
-                                 short_name: null,
-                                 uuid: null)
+instance = OpenapiClient::TransactionMarketplace.new(
+  group_name: null,
+  name: null,
+  short_name: null,
+  uuid: null
+)
 ```
-
 
