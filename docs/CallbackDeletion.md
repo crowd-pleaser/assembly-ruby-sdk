@@ -2,16 +2,17 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**callbacks** | **String** |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **callbacks** | **String** |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'OpenapiClient'
+require 'openapi_client'
 
-instance = OpenapiClient::CallbackDeletion.new(callbacks: Successfully redacted)
+instance = OpenapiClient::CallbackDeletion.new(
+  callbacks: Successfully redacted
+)
 ```
-
 

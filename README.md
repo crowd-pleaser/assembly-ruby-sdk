@@ -82,7 +82,7 @@ end
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://virtserver.swaggerhub.com/AssemblyPlatforms/assembly-api/2.0*
+All URIs are relative to *https://test.api.promisepay.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -176,7 +176,6 @@ Class | Method | HTTP request | Description
 *OpenapiClient::UsersApi* | [**update_user**](docs/UsersApi.md#update_user) | **PATCH** /users/{id} | Update User
 *OpenapiClient::UsersApi* | [**verify_user**](docs/UsersApi.md#verify_user) | **PATCH** /users/{id}/identity_verified | Verify User (Prelive Only)
 *OpenapiClient::WalletAccountsApi* | [**bill_payment**](docs/WalletAccountsApi.md#bill_payment) | **POST** /wallet_accounts/{id}/bill_payment | Pay a Bill
-*OpenapiClient::WalletAccountsApi* | [**deposit_funds**](docs/WalletAccountsApi.md#deposit_funds) | **POST** /wallet_accounts/{id}/deposit | Deposit Funds
 *OpenapiClient::WalletAccountsApi* | [**show_wallet_account**](docs/WalletAccountsApi.md#show_wallet_account) | **GET** /wallet_accounts/{id} | Show Wallet Account
 *OpenapiClient::WalletAccountsApi* | [**show_wallet_account_nbpay_details**](docs/WalletAccountsApi.md#show_wallet_account_nbpay_details) | **GET** /wallet_accounts/{id}/bpay_details | Show Wallet Account BPAY Details
 *OpenapiClient::WalletAccountsApi* | [**show_wallet_account_npp_details**](docs/WalletAccountsApi.md#show_wallet_account_npp_details) | **GET** /wallet_accounts/{id}/npp_details | Show Wallet Account NPP Details

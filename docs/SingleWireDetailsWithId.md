@@ -2,16 +2,17 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**items** | [**WireDetailsWithId**](WireDetailsWithId.md) |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **items** | [**WireDetailsWithId**](WireDetailsWithId.md) |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'OpenapiClient'
+require 'openapi_client'
 
-instance = OpenapiClient::SingleWireDetailsWithId.new(items: null)
+instance = OpenapiClient::SingleWireDetailsWithId.new(
+  items: null
+)
 ```
-
 

@@ -1,25 +1,24 @@
 # OpenapiClient::ToolsApi
 
-All URIs are relative to *https://virtserver.swaggerhub.com/AssemblyPlatforms/assembly-api/2.0*
+All URIs are relative to *https://test.api.promisepay.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**health_check**](ToolsApi.md#health_check) | **GET** /tools/status | Health check
-
+| Method | HTTP request | Description |
+| ------ | ------------ | ----------- |
+| [**health_check**](ToolsApi.md#health_check) | **GET** /tools/status | Health check |
 
 
 ## health_check
 
-> ToolsStatus health_check
+> <ToolsStatus> health_check
 
 Health check
 
 Displays a health check of the Assembly service.
 
-### Example
+### Examples
 
 ```ruby
-# load the gem
+require 'time'
 require 'openapi_client'
 # setup authorization
 OpenapiClient.configure do |config|
@@ -34,11 +33,29 @@ end
 api_instance = OpenapiClient::ToolsApi.new
 
 begin
-  #Health check
+  # Health check
   result = api_instance.health_check
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Exception when calling ToolsApi->health_check: #{e}"
+  puts "Error when calling ToolsApi->health_check: #{e}"
+end
+```
+
+#### Using the health_check_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<ToolsStatus>, Integer, Hash)> health_check_with_http_info
+
+```ruby
+begin
+  # Health check
+  data, status_code, headers = api_instance.health_check_with_http_info
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <ToolsStatus>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling ToolsApi->health_check_with_http_info: #{e}"
 end
 ```
 

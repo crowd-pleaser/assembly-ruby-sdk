@@ -2,16 +2,17 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**charges** | [**Array&lt;Charge&gt;**](Charge.md) |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **charges** | [**Array&lt;Charge&gt;**](Charge.md) |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'OpenapiClient'
+require 'openapi_client'
 
-instance = OpenapiClient::Charges.new(charges: null)
+instance = OpenapiClient::Charges.new(
+  charges: null
+)
 ```
-
 

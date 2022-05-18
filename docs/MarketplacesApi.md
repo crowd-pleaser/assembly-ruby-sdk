@@ -1,25 +1,24 @@
 # OpenapiClient::MarketplacesApi
 
-All URIs are relative to *https://virtserver.swaggerhub.com/AssemblyPlatforms/assembly-api/2.0*
+All URIs are relative to *https://test.api.promisepay.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**show_marketplace**](MarketplacesApi.md#show_marketplace) | **GET** /marketplace | Show Marketplace
-
+| Method | HTTP request | Description |
+| ------ | ------------ | ----------- |
+| [**show_marketplace**](MarketplacesApi.md#show_marketplace) | **GET** /marketplace | Show Marketplace |
 
 
 ## show_marketplace
 
-> Marketplace show_marketplace
+> <Marketplace> show_marketplace
 
 Show Marketplace
 
 Show details of your **Platform**, providing access to your configuration and related **User** and **Company**.
 
-### Example
+### Examples
 
 ```ruby
-# load the gem
+require 'time'
 require 'openapi_client'
 # setup authorization
 OpenapiClient.configure do |config|
@@ -34,11 +33,29 @@ end
 api_instance = OpenapiClient::MarketplacesApi.new
 
 begin
-  #Show Marketplace
+  # Show Marketplace
   result = api_instance.show_marketplace
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Exception when calling MarketplacesApi->show_marketplace: #{e}"
+  puts "Error when calling MarketplacesApi->show_marketplace: #{e}"
+end
+```
+
+#### Using the show_marketplace_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<Marketplace>, Integer, Hash)> show_marketplace_with_http_info
+
+```ruby
+begin
+  # Show Marketplace
+  data, status_code, headers = api_instance.show_marketplace_with_http_info
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <Marketplace>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling MarketplacesApi->show_marketplace_with_http_info: #{e}"
 end
 ```
 

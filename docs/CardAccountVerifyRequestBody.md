@@ -2,16 +2,17 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**cvv** | **String** | CVV / CVC | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **cvv** | **String** | CVV / CVC | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'OpenapiClient'
+require 'openapi_client'
 
-instance = OpenapiClient::CardAccountVerifyRequestBody.new(cvv: 123)
+instance = OpenapiClient::CardAccountVerifyRequestBody.new(
+  cvv: 123
+)
 ```
-
 

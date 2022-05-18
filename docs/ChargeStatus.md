@@ -2,20 +2,21 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **String** |  | [optional] 
-**state** | **String** |  | [optional] 
-**status** | **Integer** |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **id** | **String** |  | [optional] |
+| **state** | **String** |  | [optional] |
+| **status** | **Integer** |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'OpenapiClient'
+require 'openapi_client'
 
-instance = OpenapiClient::ChargeStatus.new(id: cb7eafc1-571c-425c-9adc-f56cb585cd68,
-                                 state: completed,
-                                 status: 22500)
+instance = OpenapiClient::ChargeStatus.new(
+  id: cb7eafc1-571c-425c-9adc-f56cb585cd68,
+  state: completed,
+  status: 22500
+)
 ```
-
 

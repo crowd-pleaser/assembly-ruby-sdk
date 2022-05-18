@@ -1,25 +1,24 @@
 # OpenapiClient::AddressesApi
 
-All URIs are relative to *https://virtserver.swaggerhub.com/AssemblyPlatforms/assembly-api/2.0*
+All URIs are relative to *https://test.api.promisepay.com*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**show_address**](AddressesApi.md#show_address) | **GET** /addresses/{id} | Show Address
-
+| Method | HTTP request | Description |
+| ------ | ------------ | ----------- |
+| [**show_address**](AddressesApi.md#show_address) | **GET** /addresses/{id} | Show Address |
 
 
 ## show_address
 
-> Address show_address(id)
+> <Address> show_address(id)
 
 Show Address
 
 Show details of a specific Address using a given address `:id`.
 
-### Example
+### Examples
 
 ```ruby
-# load the gem
+require 'time'
 require 'openapi_client'
 # setup authorization
 OpenapiClient.configure do |config|
@@ -35,20 +34,37 @@ api_instance = OpenapiClient::AddressesApi.new
 id = 'aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee' # String | Address ID
 
 begin
-  #Show Address
+  # Show Address
   result = api_instance.show_address(id)
   p result
 rescue OpenapiClient::ApiError => e
-  puts "Exception when calling AddressesApi->show_address: #{e}"
+  puts "Error when calling AddressesApi->show_address: #{e}"
+end
+```
+
+#### Using the show_address_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<Address>, Integer, Hash)> show_address_with_http_info(id)
+
+```ruby
+begin
+  # Show Address
+  data, status_code, headers = api_instance.show_address_with_http_info(id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <Address>
+rescue OpenapiClient::ApiError => e
+  puts "Error when calling AddressesApi->show_address_with_http_info: #{e}"
 end
 ```
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| Address ID | [default to &#39;aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee&#39;]
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **id** | **String** | Address ID | [default to &#39;aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee&#39;] |
 
 ### Return type
 
